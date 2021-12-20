@@ -1,0 +1,52 @@
+<div style="text-align: center; overflow-y: hidden">
+
+
+  <h2 style="margin-top: 110px;">Cadastrar Funcionarios</h2>
+
+  <form style="margin-top: 35px">
+
+    <p>Nome: <input type="text" name="name" [(ngModel)]="funcionario.nome"></p>
+    <p>Sobrenome: <input type="text" name="sobrenome" [(ngModel)]="funcionario.sobrenome"></p>
+    <p>Email: <input type="text" name="email" [(ngModel)]="funcionario.email"></p>
+    <p>Número Pis: <input type="text" name="numPis" [(ngModel)]="funcionario.numPis"></p>
+    <p>Data Nascimento: <input type="text" name="dtNascimento" [(ngModel)]="funcionario.dtNascimento"></p>
+
+    <button class="salvar" type="button" (click)="cadastrar()">Salvar</button>
+
+  </form>
+
+  <h2 style="margin-top: 70px; text-align: center">Funcionários cadastrados</h2>
+
+  <table style="text-align: center; margin: auto">
+
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Email</th>
+      <th>Número Pis</th>
+      <th>Data de Nascimento</th>
+      <th>Ações</th>
+    </tr>
+
+    <tr *ngFor="let f of funcionarios">
+
+      <td>{{f.nome}}</td>
+      <td>{{f.sobrenome}}</td>
+      <td>{{f.email}}</td>
+      <td>{{f.numPis}}</td>
+      <td>{{f.dtNascimento}}</td>
+
+      <td>
+        <button type="button" (click)="editar(f)">Editar</button>
+      </td>
+      <td>
+        <button type="button" (click)="deletar(f.idFuncionario)">Excluir</button>
+      </td>
+
+    </tr>
+  </table>
+</div>
+
+
+
+
